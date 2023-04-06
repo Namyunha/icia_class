@@ -18,31 +18,27 @@
                  
                  
                     */
-      /* .class1 { 
-            background-color: orange;
-        } */
-      /* p태그 중에서 class1이 적용된 요소 */
-      p.class1 {
+      div ~ p {
         background-color: orange;
       }
     </style>
   </head>
   <body>
-    <h2 class="class1">h2 요소</h2>
+    <h2>h2 요소</h2>
     <p>p태그 요소입니다.</p>
     <div>
-      <p class="class1">div 안에 있는 p태그1</p>
-      <p class="class2">div 안에 있는 p태그2</p>
-      <section class="class1 class2">
+      <p>div 안에 있는 p태그1</p>
+      <p>div 안에 있는 p태그2</p>
+      <section>
         <p>div 안에 있는 section 안의 p태그</p>
       </section>
     </div>
     <p>body 안에 있는 p태그1</p>
     <p>body 안에 있는 p태그2</p>
-    <main class="class2">
+    <main>
       <p>main 안에 있는 p태그</p>
     </main>
     <p>main 다음에 오는 p태그1</p>
-    <p class="class1 class2">main 다음에 오는 p태그2</p>
+    <p>main 다음에 오는 p태그2</p>
   </body>
 </html>

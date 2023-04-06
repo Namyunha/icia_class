@@ -1,0 +1,83 @@
+9<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>relative</title>
+    <style>
+      /* 테두리 크기까지 고려해서 요소 크기 지정 */
+      * {
+        box-sizing: border-box;
+        margin: 0;
+      }
+      div {
+        width: 300px;
+        height: 300px;
+      }
+      #container1 {
+        border: 5px solid red;
+      }
+      #container2 {
+        border: 5px solid green;
+        position: relative;
+        /* position: absolute; 
+            top: 20px;
+            left: 30px; */
+        /* margin-top: 30px; */
+      }
+      #container3 {
+        border: 5px solid blue;
+        position: relative;
+      }
+
+      #child1 {
+        border: 2px dashed yellow;
+        background-color: violet;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 30px;
+        left: 50px;
+      }
+      #child2 {
+        border: 2px dashed black;
+        background-color: yellow;
+        width: 150px;
+        height: 150px;
+        position: relative;
+      }
+      #child3 {
+        border: 2px dashed dodgerblue;
+        background-color: red;
+        top: 5px;
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        left: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 
+        div를 세 개 만들고 각각은 id가 적용됨
+        id값은 container1, 2, 3
+        container1은 5px의 빨간색 실선 테두리 적용
+        container2은 5px의 녹색 실선 테두리 적용
+        container3은 5px의 파란색 실선 테두리 적용
+        div의 크기는 가로100, 세로100으로 지정
+     -->
+    <div id="container1">container1</div>
+    <div id="container2">
+      container2
+      <div id="child1">child1</div>
+    </div>
+    <div id="container3">
+      container3
+      <div id="child2">
+        child2
+        <div id="child3">child3</div>
+      </div>
+    </div>
+  </body>
+</html>
