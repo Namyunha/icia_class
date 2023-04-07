@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </head>
+  <body>
+    <!-- 사용자로부터 입력을 받아서 어딘가(서버)로 보낼 때 사용
+        action: 목적지(보통 서버에서 처리할 주소를 작성함) 
+        method: 전송방식(http request method)을 지정함
+                get: 입력값이 주소창에 노출됨
+                post: 입력값이 노출되지 않음-->
+    <!--mt: margin top, me, ms, mb  -->
+    <div class="container mt-5">
+      <form action="/login" method="post">
+        <div class="form-floating mb-3">
+          <input
+            type="text"
+            id="email"
+            name="member_email"
+            placeholder="이메일을 입력해주세요"
+            class="form-control"
+          />
+          <label for="email">email</label>
+        </div>
+        <div class="form-floating">
+          <input
+            type="password"
+            id="password"
+            name="member_password"
+            placeholder="비밀번호를 입력해주세요"
+            class="form-control"
+          />
+          <label for="password">password</label>
+        </div>
+        <input type="submit" value="login" class="btn btn-primary mt-3" />
+      </form>
+    </div>
+
+    <!-- http://127.0.0.1:5500/login?member_email=lu0201 -->
+    <!-- http://127.0.0.1:5500/login?member_email=lu0201&member_password=abc123 -->
+  </body>
+</html>

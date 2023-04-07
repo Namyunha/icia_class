@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid-1</title>
+    <style>
+      /* grid 적용을 위해선 배치하려는 요소의 부모 요소에
+            grid를 지정해야 함 */
+      .container {
+        display: grid;
+        grid-template-columns: auto auto auto auto;
+      }
+      .item {
+        background-color: lightskyblue;
+        border: 1px solid royalblue;
+        width: 300px;
+        height: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="item">div1</div>
+      <div class="item">div2</div>
+      <div class="item">div3</div>
+      <div class="item">div4</div>
+      <div class="item">div5</div>
+      <div class="item">div6</div>
+      <div class="item">div7</div>
+      <div class="item">div8</div>
+    </div>
+  </body>
+</html>
