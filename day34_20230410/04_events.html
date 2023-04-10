@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #div1 {
+        width: 100px;
+        height: 100px;
+        background-color: coral;
+      }
+      #div2 {
+        width: 100px;
+        height: 100px;
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 아래 버튼을 클릭하면 fun1 함수 호출 -->
+    <button onclick="fun1(this)">클릭해보세요</button>
+    <h2 onclick="fun2('넘기는 값이에요')">나도 클릭해보세요</h2>
+    <!-- onmouseover, onmouseout 이벤트 -->
+    <div id="div1" onmouseover="fun3()" onmouseout="fun4()"></div>
+    <div id="div2" onmousedown="fun5()" onmouseup="fun6()"></div>
+    <!-- onkeydown, onkeyup 이벤트 -->
+    <input type="text" onkeydown="fun7()" placeholder="입력해보시죠" />
+    <input type="text" onkeydown="fun8()" placeholder="입력해보시죠" />
+    <!-- onblur 이벤트 -->
+    <input type="text" onblur="fun9()" placeholder="입력해보시죠" />
+  </body>
+  <script>
+    // fun1 함수 정의
+    const fun1 = (ele1) => {
+      console.log("클릭하셨네요");
+      console.log("ele1", ele1);
+    };
+    const fun2 = (str2) => {
+      console.log("h2 클릭하셨네요");
+      console.log("str2: ", str2);
+    };
+    const fun3 = () => {
+      console.log("왔네요");
+    };
+    const fun4 = () => {
+      console.log("갔네요");
+    };
+    const fun5 = () => {
+      console.log("눌렀다");
+    };
+    const fun6 = () => {
+      console.log("뗐다");
+    };
+    const fun7 = () => {
+      console.log("키보드를 눌렀다");
+    };
+    const fun8 = () => {
+      console.log("키보드에서 손을 뗐다");
+    };
+    const fun9 = () => {
+      console.log("절 떠나셨네요");
+    };
+  </script>
+</html>

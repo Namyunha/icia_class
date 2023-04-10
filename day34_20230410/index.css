@@ -1,0 +1,191 @@
+/* div {
+  width: 100px;
+  height: 50px;
+  position: relative;
+}
+.red {
+  left: 10px;
+  background-color: red;
+}
+
+.blue {
+  right: 10px;
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+} */
+@import url("https://fonts.googleapis.com/css2?family=Alkatra:wght@500&family=Nanum+Myeongjo:wght@800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@800&family=Rajdhani:wght@700&display=swap");
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+* {
+  box-sizing: border-box;
+}
+body {
+  padding: 50px;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.date {
+  font-family: "Nanum Myeongjo", serif;
+  font-family: "Rajdhani", sans-serif;
+  width: 40%;
+  gap: 50px;
+  height: 30%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+}
+#clock {
+  font-size: 100px;
+  font-weight: 600;
+}
+#today {
+  font-size: 15px;
+  font-weight: 600;
+}
+.comments {
+  display: flex;
+  width: 500px;
+  font-weight: 700;
+  height: 50px;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  font-size: 15px;
+  gap: 20px;
+}
+
+.comments .comments_comment {
+  font-size: 20px;
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const book = {
+        name: "자바스크립트 기초",
+        publish: "OO출판사",
+        author: "피카츄",
+        price: 20000,
+        index: {
+          ch1: "소개",
+          ch2: "기초문법",
+          ch3: "연산자",
+        },
+        date: "2023년 4월",
+      };
+
+      console.log("book type: ", typeof book);
+      // name 출력
+      console.log(book.name);
+      console.log(book.price);
+      console.log(book.index.ch3);
+    </script>
+  </body>
+</html>

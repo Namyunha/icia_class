@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2><span>안녕하세요</span></h2>
+    <h2>반갑습니다</h2>
+    <h2>오늘은 월요일</h2>
+    <h3>이제 곧 3시</h3>
+    <h2>두시간 남았네</h2>
+    <h4></h4>
+  </body>
+  <script>
+    // document 값 출력
+    console.log(document);
+    // 현재 문서에 있는 모든 h2 요소 출력
+    console.log(document.getElementsByTagName("h2"));
+    const h2All = document.getElementsByTagName("h2");
+    console.log(h2All);
+    console.log(h2All.length);
+    console.log(h2All[0]);
+    // 첫번째 h2 태그의 innerHTML 속성값 출력
+    console.log(h2All[0].innerHTML);
+    console.log(h2All[0].innerText);
+    // 반복문을 활용하여 h2요소들의 innerText 출력
+    for (let i = 0; i < h2All.length; i++) {
+      console.log(h2All[i].innerText);
+    }
+
+    // querySelector(css선택자): 해당 요소 중 첫번째 것만 가져옴
+    console.log(document.querySelector("h2"));
+    console.log(document.querySelectorAll("h2"));
+    const h2All2 = document.querySelectorAll("h2");
+    for (let i = 0; i < h2All2.length; i++) {
+      console.log(h2All2[i].innerText);
+    }
+
+    // 내용이 없는 h4 태그에 텍스트 추가하기
+    // h4태그 요소 가져오기
+    const h4ele = document.getElementsByTagName("h4");
+    // h4태그 innerText 값 지정하기
+    h4ele[0].innerText = "이 내용이 화면에 보입니다.";
+
+    document.getElementsByTagName("h4")[0].innerText = "ㅇㅅㅇ";
+  </script>
+</html>
