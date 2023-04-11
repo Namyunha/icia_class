@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>계산기</h1>
+    <p>number1 :<input id="number1" type="text" /></p>
+    <p>number2 :<input id="number2" type="text" /></p>
+    <p>계산결과 :<input id="result" type="text" /></p>
+    <input type="button" value="계산" onclick="fun1()" />
+    <script>
+      const number1 = document.getElementById("number1");
+      const number2 = document.getElementById("number2");
+      const result = document.getElementById("result");
+      num1 = Number(number1);
+      num2 = Number(number2);
+
+      const fun1 = () => {
+        if (number1.value !== "" && number2.value) {
+          num1 = Number(number1.value);
+          num2 = Number(number2.value);
+          console.log(num1);
+          console.log(num2);
+          result.value = num1 + num2;
+        } else {
+          console.log("number1.value가 유효하지 않은 값입니다.");
+        }
+      };
+      console.log(num1);
+    </script>
+  </body>
+</html>

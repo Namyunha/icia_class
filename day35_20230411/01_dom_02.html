@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="../images/1.png" alt="" id="img1" />
+    <button onclick="changeImg()">이미지교체</button>
+    <script>
+      const images = ["1.png", "2.png"];
+      const changeImg = () => {
+        let i = Math.floor(Math.random() * images.length);
+        const img = document.getElementById("img1");
+        console.log(img);
+        console.log(img.src);
+        img.src = `../images/${images[i]}`;
+      };
+    </script>
+  </body>
+</html>

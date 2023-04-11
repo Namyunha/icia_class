@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style></style>
+    <link rel="stylesheet" href="../css/bootstrap.css" />
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <style>
+      table,
+      tr,
+      td {
+        border: 1px solid black;
+        border-collapse: collapse;
+        padding: 10px;
+        text-align: center;
+      }
+      td {
+        width: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div id="id1">
+        <!-- 여기에 구구단을 table 태그를 이용하여 출력합니다. -->
+      </div>
+      <div class="id1_btn">
+        <button onclick="fun1()">구구단 출력</button>
+      </div>
+    </div>
+
+    <script>
+      const id1 = document.querySelector("#id1");
+      const fun1 = () => {
+        const table = document.createElement("table");
+        for (let i = 2; i <= 9; i++) {
+          const tr = document.createElement("tr");
+          tr.innerText = `${i}단`;
+          for (let j = 1; j <= 9; j++) {
+            let td = document.createElement("td");
+            td.innerText = i * j;
+            tr.appendChild(td);
+            table.appendChild(tr);
+            id1.appendChild(table);
+          }
+        }
+      };
+    </script>
+  </body>
+</html>
+<!-- const fun1 = () => {
+        let table = "<tr>" + "<table border='1'>";
+        for(let i=2; i<=9; i++){
+            table += "<td style='text-align:center; width:30px; height:30px'>" + i +"단" + "</td>";
+            for(let j=1; j<=9; j++){
+                table += "<td style='text-align:center; width:30px; height:30px'>" + (i*j) + "</td>";
+            }
+            table += "</tr>"
+        }
+        table += "</table>";
+        document.getElementById("id1").innerHTML = table;
+    } -->

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grade</title>
+  </head>
+  <body>
+    <p>java성적 : <input id="java" type="text" /></p>
+    <p>html성적 : <input id="html" type="text" /></p>
+    <p>학점: <input id="grade" type="text" /></p>
+    <h1 id="result"></h1>
+
+    <input id="cal" type="button" value="학점계산" onclick="fun1()" />
+  </body>
+  <script>
+    const java = document.getElementById("java");
+    const html = document.getElementById("html");
+    const grade = document.getElementById("grade");
+    const result = document.getElementById("result");
+
+    const fun1 = () => {
+      let javaNum = Number(java.value);
+      let htmlNum = Number(html.value);
+      let avg = (javaNum + htmlNum) / 2;
+
+      if (javaNum < 0 || htmlNum < 0) {
+        result.innerText = "0이상 입력해주세요";
+      } else {
+        if (avg >= 90) {
+          painting("A");
+        } else if (avg >= 80) {
+          painting("B");
+        } else if (avg >= 70) {
+          painting("C");
+        } else if (avg >= 60) {
+          painting("D");
+        } else {
+          painting("F");
+        }
+      }
+    };
+
+    function painting(g) {
+      grade.value = g;
+      result.innerText = `당신의 학점은${g}입니다`;
+    }
+  </script>
+</html>

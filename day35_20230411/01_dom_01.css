@@ -193,6 +193,11 @@ input:hover {
   display: none;
 }
 
+.hidden2 {
+  display: none;
+  animation-duration: 2s;
+  animation-name: slideout;
+}
 .slide {
   animation-duration: 2s;
   animation-name: slidein;
@@ -208,6 +213,23 @@ input:hover {
     margin-left: 0%;
   }
 }
+/* 
+.slideout {
+  animation-duration: 2s;
+  animation-name: slideout;
+}
+
+@keyframes slideout {
+  from {
+    transform: rotateZ(720deg);
+    margin-left: 0%;
+  }
+
+  to {
+    transform: rotateZ(0deg);
+    margin-left: 100%;
+  }
+} */
 
 .container_title_center {
   margin-top: 5%;
