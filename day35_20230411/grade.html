@@ -11,7 +11,6 @@
     <p>html성적 : <input id="html" type="text" /></p>
     <p>학점: <input id="grade" type="text" /></p>
     <h1 id="result"></h1>
-
     <input id="cal" type="button" value="학점계산" onclick="fun1()" />
   </body>
   <script>
@@ -19,12 +18,10 @@
     const html = document.getElementById("html");
     const grade = document.getElementById("grade");
     const result = document.getElementById("result");
-
     const fun1 = () => {
       let javaNum = Number(java.value);
       let htmlNum = Number(html.value);
       let avg = (javaNum + htmlNum) / 2;
-
       if (javaNum < 0 || htmlNum < 0) {
         result.innerText = "0이상 입력해주세요";
       } else {

@@ -5,45 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="01_dom_01.css" />
-    <style></style>
   </head>
   <body>
-    <div class="container">
-      <div class="container_title">
-        <img
-          class="hidden"
-          width="230px"
-          height="200px"
-          src="../images/1.png"
-          alt=""
-        />
-        <div class="container_title_center">
-          <h2>오늘은 4월 11일 화요일</h2>
-          <h3>오늘은 35일차</h3>
-          <div id="id1"></div>
-          <div id="id2"></div>
-        </div>
-      </div>
-      <div class="wrapper">
-        <input class="btn1" type="button" value="fun1함수 호출" />
-        <input class="btn2" type="button" value="fun2함수 호출, alert출력" />
-        <input class="btn3" type="button" value="fun3함수 호출, div에 넣기" />
-        <input class="btn4" type="button" value="보노보노" />
-        <input class="btn5" type="button" value="1~100" />
-      </div>
-    </div>
+    <h2>오늘은 4월11일 화요일</h2>
+    <h3>오늘은 35일차</h3>
+    <div id="id1"></div>
+    <div id="id2"></div>
+
+    <button onclick="fun1()">h2</button>
+    <button onclick="fun2()">h3</button>
+    <button onclick="fun3()">h2h3</button>
+    <button onclick="fun4()">1부터100</button>
+
     <!-- 
         버튼은 3개가 있고 각각은 다른 함수를 호출함
-        1.button을 클릭했을 때 fun1함수를 호출하고 h2 태그의 innerText 값을 콘솔에 출력 
-        2. button을 클릭했을 때 fun2 함수를 호출하고 h3 태그의 
-        innerHTML 값을 alert으로 출력
-        3. button을 클릭했을 때 fun3 함수를 호출하고 h2, h3 태그의
-        innerText 값을 id1이 적용된 div의 innerText 값으로 적용하여 
-        화면에 보이게 하기
-        4. button을 클릭했을 때 fun3함수를 호출하고 id2가 적용된 div에 아래 ex id가
+        1. button을 클릭했을 때 fun1함수를 호출하고 h2 태그의 innerText값을
+            콘솔에 출력
+        2. button을 클릭했을 때 fun2함수를 호출하고 h3 태그의 innerHTML 값을
+            alert으로 출력
+        3. button을 클릭했을 때 fun3함수를 호출하고 h2, h3 태그의 innerText값을
+            id1이 적용된 div의 innerText 값으로 적용하여 화면에 보이게
+        4. button을 클릭했을 때 fun4함수를 호출하고 id2가 적용된 div에 아래 ex id가
             적용된 태그처럼 ul, li를 이용하여 1부터 100까지 출력하는 내용을 만들어보세요.
-    -->
-    <script src="01_dom_01.js"></script>
+
+     -->
+
+    <div id="ex">
+      <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        중간생략
+        <li>100</li>
+      </ul>
+    </div>
   </body>
+  <script>
+    const ele1 = document.getElementsByTagName("h2");
+    const fun1 = () => {
+      console.log(ele1[0].innerText);
+    };
+
+    const ele2 = document.getElementsByTagName("h3");
+    const fun2 = () => {
+      alert(ele2[0].innerHTML);
+    };
+
+    const fun3 = () => {
+      var ele3 = document.getElementById("id1").innerText;
+      // var ele3 = "div의 innerText";
+      // document.getElementsByTagName("h2")[0].innerText = ele3;
+      // document.getElementsByTagName("h3")[0].innerText = ele3;
+      ele3 = document.getElementsByTagName("h2")[0].innerText;
+      ele3 = document.getElementsByTagName("h3")[0].innerText;
+      document.getElementById("id1").innerText =
+        document.getElementsByTagName("h2")[0].innerText +
+        document.getElementsByTagName("h3")[0].innerText;
+    };
+
+    const fun4 = () => {
+      let output = "";
+      for (let i = 1; i <= 100; i++) {
+        // output = output + "<li>" + i + "</li>";
+        output += "<li>" + i + "</li>";
+      }
+      document.getElementById("id2").innerHTML = "<ul>" + output + "</ul>";
+    };
+
+    // document.getElementById("id1").innerText = document.body.innerText;
+  </script>
 </html>
