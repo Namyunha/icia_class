@@ -1,0 +1,220 @@
+@import url("https://fonts.googleapis.com/css2?family=Alkatra&family=Courgette&family=Montserrat:wght@700&family=Roboto+Mono:wght@500&family=Sedgwick+Ave+Display&family=Tilt+Prism&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alkatra&family=Courgette&family=Montserrat:wght@700&family=Roboto+Mono:wght@500&family=Sedgwick+Ave+Display&display=swap");
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  /* background: rgb(2, 0, 36);
+        background: linear-gradient(
+          90deg,
+          rgb(36, 28, 190) 5%,
+          rgb(16, 216, 103) 40%,
+          rgb(27, 166, 194) 100%
+        ); */
+  background: linear-gradient(
+      217deg,
+      rgba(255, 0, 0, 0.8),
+      rgba(255, 0, 0, 0) 70.71%
+    ),
+    linear-gradient(127deg, rgba(0, 255, 0, 0.8), rgba(0, 255, 0, 0) 70.71%),
+    linear-gradient(336deg, rgba(0, 0, 255, 0.8), rgba(0, 0, 255, 0) 70.71%);
+}
+.container {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-right: 50px;
+}
+.container_title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 70%;
+  margin-bottom: 30px;
+  color: white;
+  font-size: 40px;
+  font-family: "Alkatra", cursive;
+  font-family: "Courgette", cursive;
+  font-family: "Montserrat", sans-serif;
+  font-family: "Roboto Mono", monospace;
+  font-family: "Sedgwick Ave Display", cursive;
+  font-family: "Tilt Prism", cursive;
+}
+.wrapper {
+  display: flex;
+  height: 10%;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+}
+input {
+  height: 50px;
+  background-color: palegreen;
+  color: black;
+  width: 300px;
+  border-radius: 10px;
+  font-weight: 800;
+}
+input:hover {
+  box-shadow: 1px 1px 10px 10px palegreen;
+}
+
+.hidden {
+  display: none;
+}
+
+.slide {
+  animation-duration: 2s;
+  animation-name: slidein;
+}
+@keyframes slidein {
+  from {
+    transform: rotateZ(0deg);
+    margin-left: 100%;
+  }
+
+  to {
+    transform: rotateZ(720deg);
+    margin-left: 0%;
+  }
+}
+
+.container_title_center {
+  margin-top: 5%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 15%;
+  height: 40%;
+}
