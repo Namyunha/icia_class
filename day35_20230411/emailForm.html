@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .hidden {
+      display: none;
+    }
+  </style>
+  <body>
+    <form id="form">
+      <h3>이메일</h3>
+      <input id="insert" type="text" />
+      <div style="color: red" class="result"></div>
+    </form>
+  </body>
+
+  <script>
+    const loginForm = document.querySelector("#form");
+    const insert = document.querySelector("#insert");
+    const result = document.querySelector(".result");
+    const result2 = document.querySelector(".result2");
+
+    function fun1(event) {
+      event.preventDefault();
+      console.log(insert.value);
+      if (insert.value.length == 0) {
+        result.innerText = "필수입력입니다";
+      } else if (insert.value.length <= 5) {
+        result.innerText = "5~20자로 입력해주세요";
+      } else if (insert.value.length <= 20) {
+        result.innerText = "좋아요";
+        result.setAttribute("style", "color: green;");
+      } else if (insert.value.length > 20) {
+        result.innerText = "5~20자로 입력해주세요";
+      }
+    }
+
+    loginForm.addEventListener("submit", fun1);
+  </script>
+</html>

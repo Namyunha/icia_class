@@ -5,31 +5,101 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      body {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .container {
+        background-color: turquoise;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid black;
+        width: 50%;
+        height: 50%;
+      }
+      .container_btn {
+        width: 70%;
+        border: 1px solid black;
+        height: 10%;
+        gap: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .container_btn input {
+        width: 30%;
+        height: 50%;
+      }
+    </style>
   </head>
   <body>
-    <h1>계산기</h1>
-    <p>number1 :<input id="number1" type="text" /></p>
-    <p>number2 :<input id="number2" type="text" /></p>
-    <p>계산결과 :<input id="result" type="text" /></p>
-    <input type="button" value="계산" onclick="fun1()" />
+    <div class="container">
+      <h2>계산기</h2>
+      <p>number1 :<input id="number1" type="text" /></p>
+      <p>number2 :<input id="number2" type="text" /></p>
+      <p>계산결과 :<input id="result" type="text" /></p>
+      <div class="container_btn">
+        <input type="button" value="더하기" onclick="fun1()" />
+        <input type="button" value="빼기" onclick="fun2()" />
+        <input type="button" value="곱하기" onclick="fun3()" />
+        <input type="button" value="나누기" onclick="fun4()" />
+      </div>
+      <div class="result">값: <input id="result2" type="text" disabled /></div>
+    </div>
     <script>
       const number1 = document.getElementById("number1");
       const number2 = document.getElementById("number2");
       const result = document.getElementById("result");
+      const result2 = document.getElementById("result2");
+
       num1 = Number(number1);
       num2 = Number(number2);
 
       const fun1 = () => {
-        if (number1.value !== "" && number2.value) {
-          num1 = Number(number1.value);
-          num2 = Number(number2.value);
-          console.log(num1);
-          console.log(num2);
-          result.value = num1 + num2;
-        } else {
-          console.log("number1.value가 유효하지 않은 값입니다.");
-        }
+        num1 = Number(number1.value);
+        num2 = Number(number2.value);
+        console.log(num1);
+        console.log(num2);
+        result.value = num1 + num2;
       };
+      const fun2 = () => {
+        num1 = Number(number1.value);
+        num2 = Number(number2.value);
+        console.log(num1);
+        console.log(num2);
+        result.value = num1 - num2;
+      };
+      const fun3 = () => {
+        num1 = Number(number1.value);
+        num2 = Number(number2.value);
+        console.log(num1);
+        console.log(num2);
+        result.value = num1 * num2;
+      };
+      const fun4 = () => {
+        num1 = Number(number1.value);
+        num2 = Number(number2.value);
+        console.log(num1);
+        console.log(num2);
+        result.value = num1 / num2;
+        result2.value = num1 / num2;
+      };
+
+      function painting(event) {
+        num1 = Number(number1.value);
+        num2 = Number(number2.value);
+        console.log(num1);
+        console.log(num2);
+        result.value = num1 + event + num2;
+      }
+
       console.log(num1);
     </script>
   </body>
