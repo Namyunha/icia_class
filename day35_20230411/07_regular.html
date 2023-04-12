@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- 정규식(regular expression) -->
+    <!-- 1. 영문소문자로만 5~10글자 -->
+    text1: <input type="text" id="text1" onblur="text1_check()" /> <br />
+    <!-- 2. 영문소문자, 숫자 5~10글자 -->
+    text2: <input type="text" id="text2" onblur="text2_check()" /> <br />
+    <!-- 3. 영문소문자(필수), 숫자 5~10글자 -->
+    text3: <input type="text" id="text3" onblur="text3_check()" /> <br />
+    <!-- 4. 영문소문자(필수), 숫자(필수) 5~10글자 -->
+    text4: <input type="text" id="text4" onblur="text4_check()" /> <br />
+    <!-- 5. 영문대/소문자(필수), 숫자(필수) 5~10글자 -->
+    text5: <input type="text" id="text5" onblur="text5_check()" /> <br />
+    <!-- 6. 영문대/소문자(필수), 숫자(필수), 특수문자(-_!#) 5~10글자 -->
+    text6: <input type="text" id="text6" onblur="text6_check()" /> <br />
+    <!-- 7. 전화번호형식(000-0000-0000) -->
+    text7: <input type="text" id="text7" onblur="text7_check()" /> <br />
+  </body>
+  <script>
+    const text1_check = () => {
+      const text1 = document.getElementById("text1").value;
+      console.log(text1);
+      const exp = /^[a-z]{5,10}$/;
+      // 정규식 만족여부 체크
+      if (text1.match(exp)) {
+        console.log("정규식 만족");
+      } else {
+        console.log("정규식 만족하지 않음");
+      }
+    };
+    const text2_check = () => {
+      const text2 = document.getElementById("text2").value;
+      console.log(text2);
+      const exp = /^[a-z\d]{5,10}$/;
+      // 정규식 만족여부 체크
+      if (text2.match(exp)) {
+        console.log("정규식 만족");
+      } else {
+        console.log("정규식 만족하지 않음");
+      }
+    };
+    const text3_check = () => {
+      const text3 = document.getElementById("text3").value;
+      console.log(text3);
+      const exp = /^(?=.*[a-z])[a-z\d]{5,10}$/;
+      // 정규식 만족여부 체크
+      if (text3.match(exp)) {
+        console.log("정규식 만족");
+      } else {
+        console.log("정규식 만족하지 않음");
+      }
+    };
+
+    const text4_check = () => {
+      const text4 = document.getElementById("text4").value;
+      console.log(text4);
+      const exp = /^(?=.*[a-z])(?=.*\d)[a-z\d]{5,10}$/;
+      // 정규식 만족여부 체크
+      if (text4.match(exp)) {
+        console.log("정규식 만족");
+      } else {
+        console.log("정규식 만족하지 않음");
+      }
+    };
+    const text5_check = () => {
+      const text5 = document.getElementById("text5").value;
+      console.log(text5);
+      const exp = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-z\d]{5,10}$/;
+      // 정규식 만족여부 체크
+      if (text5.match(exp)) {
+        console.log("정규식 만족");
+      } else {
+        console.log("정규식 만족하지 않음");
+      }
+    };
+    const text6_check = () => {
+      const text6 = document.getElementById("text6").value;
+      console.log(text6);
+      const exp =
+        /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[-_!#])[A-Za-z\d-_!#]{5,10}$/;
+      // 정규식 만족여부 체크
+      if (text6.match(exp)) {
+        console.log("정규식 만족");
+      } else {
+        console.log("정규식 만족하지 않음");
+      }
+    };
+    const text7_check = () => {
+      const text7 = document.getElementById("text7").value;
+      console.log(text7);
+      const exp = /^\d{3}-\d{4}-\d{4}$/;
+      // 정규식 만족여부 체크
+      if (text7.match(exp)) {
+        console.log("정규식 만족");
+      } else {
+        console.log("정규식 만족하지 않음");
+      }
+    };
+  </script>
+</html>

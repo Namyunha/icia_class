@@ -141,6 +141,7 @@ body {
   align-items: center;
 }
 .Calculator {
+  font-weight: 800;
   width: 50%;
   height: 60%;
   border: 3px solid black;
@@ -150,17 +151,41 @@ body {
   width: 100%;
   height: 30%;
   padding: 10px;
-  background-color: gray;
+  background-color: black;
 }
 .Calculator_key {
   width: 100%;
   height: 70%;
+
   padding: 10px;
-  background-color: goldenrod;
+  background-color: gray;
+  color: white;
 }
 .Calculator_key .Calculator_key_flex {
   width: 100%;
-  height: 5%;
+  height: 10%;
   display: flex;
   justify-content: space-around;
+}
+.Calculator_key .Calculator_key_flex input {
+  border: none;
+  background-color: gray;
+
+  color: white;
+}
+
+.Calculator_key_grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  height: 90%;
+}
+input {
+  cursor: pointer;
+}
+.Calculator_key_grid input {
+  font-size: 20px;
+  background-color: gray;
+  color: white;
 }

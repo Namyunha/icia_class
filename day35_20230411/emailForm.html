@@ -30,16 +30,18 @@
       console.log(insert.value);
       if (insert.value.length == 0) {
         result.innerText = "필수입력입니다";
+        result.setAttribute("style", "color: red;");
       } else if (insert.value.length <= 5) {
         result.innerText = "5~20자로 입력해주세요";
+        result.setAttribute("style", "color: red;");
       } else if (insert.value.length <= 20) {
         result.innerText = "좋아요";
         result.setAttribute("style", "color: green;");
       } else if (insert.value.length > 20) {
         result.innerText = "5~20자로 입력해주세요";
+        result.setAttribute("style", "color: red;");
       }
     }
-
     loginForm.addEventListener("submit", fun1);
   </script>
 </html>
