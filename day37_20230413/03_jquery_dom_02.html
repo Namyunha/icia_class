@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script
+      src="https://code.jquery.com/jquery-3.6.4.min.js"
+      integrity="sha256-oP6HI9z1XaZNBrJURtCoUT5SUnxFr8s3BzRl+cbzUq8="
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <h2 id="id1">html</h2>
+    <h2 id="id2">javascript</h2>
+
+    <div id="div1">
+      <h2 id="id3">css</h2>
+    </div>
+    <h2 class="class1">spring</h2>
+    <h2 class="class1">springboot</h2>
+  </body>
+  <script>
+    // 모든 h2 요소 가져오기
+    const h2All1 = document.getElementsByTagName("h2");
+    console.log(h2All1);
+    const h2All2 = document.querySelectorAll("h2");
+    console.log(h2All2);
+
+    // 모든 h2 요소의 innerText 출력하기
+    for (i = 0; i < h2All1.length; i++) {
+      console.log(h2All1[i].innerText);
+    }
+
+    // id1이 적용된 요소 가져오기
+    const ele1 = document.getElementById("id1");
+    const ele1jq = $("#id1");
+    console.log($("#id1").text()); // innerText
+    console.log($("#id1").html()); // innerHTML
+    const ele2 = document.querySelector("#id1");
+
+    // class1이 적용된 모든 요소 가져오기
+    const ele3 = document.getElementsByClassName("class1");
+    const ele4 = document.querySelectorAll(".class1");
+    console.log($(".class1").html());
+    console.log($(".class1").text());
+    // h2 태그 중에서 class1이 적용된 모든 요소 가져오기
+    console.log($("h2.class1"));
+    console.log(document.querySelectorAll("h2.class1"));
+
+    // id2 요소의 text 값을 jquery로 변경하기
+    $("#id2").text("jquery");
+
+    // id3 요소의 text 값을 변수로 가져오기
+    const id3Text = $("#id3").text();
+    console.log(id3Text);
+
+    // id1 요소의 display 속성을 none으로
+    document.getElementById("id1").style.display = "none";
+    document.getElementById("id1").style.display = "block";
+
+    $("#id1").hide();
+    $("#id1").show();
+
+    // id3 요소의 글자크기를 조절
+    document.getElementById("id3").style.fontSize = "100px";
+    $("#id2").css("font-size", "200px");
+
+    // 부모 요소 확인하기
+    // id3의 부모
+    console.log(document.getElementById("id3").parentNode);
+    console.log($("#id3").parent().prop("nodeName"));
+    console.log($("#id3").parent());
+  </script>
+</html>

@@ -11,25 +11,34 @@
   <body>
     <form id="loginForm">
       <div id="loginForm_title"></div>
-
       <div id="loginForm_insert">
-        
+        <div id="info">
+          이름: <input type="text" required>
+          주민번호: <input type="text" required>
+        </div>
+        <div id="Gender">
+          <label for="gender">성별</label>
+          남: <input id="gender" type="radio" name="gender" value="male">
+          여: <input id="gender" type="radio" name="gender" value="female">
+        </div>
       <div id="loginFormId">
-        아이디: 
+        아이디:
         <input
           id="loginFormIdInput"
+          class="login_info"
           type="text"
-          placeholder="아이디"
         />
         <input class="btn" id="loginFormIdInput_btn" type="button" value="아이디체크" />
         <div class="loginFormIdInput_input"></div>
-      </div>
+      </div
+      >
+
       <div id="loginFormPw">
-        비밀번호: 
+        비밀번호:
         <input
           id="loginFormPwInput"
+          class="login_info"
           type="text"
-          placeholder="비밀번호"
         />
         <input class="btn" id="loginFormPwInput_btn" type="button" value="비밀번호체크" />
         <div class="loginFormPwInput_input"></div>
@@ -40,6 +49,27 @@
         <input class="btn" id="checkFormPwInput_btn" type="button" value="중복체크" />
         <div class="checkFormPwInput"></div>
       </div>
+
+      <div id="phone">
+        <div>
+        휴대폰: <input id="checkPhoneInput" type="text" value=""> 
+        <select name="" id="carrier" class="selection">
+          <option value=""> 통신사선택 </option>
+          <option value="naver.com">SKT</option>
+          <option value="github.com">KT</option>
+          <option value="gmail.com">LG</option>
+          <option value="hanmail.net">MVNO</option>
+        </select> 
+        <input class="btn" id="loginFormPhoneInput_btn" type="button" value="인증번호받기" />
+        <div id="phone_result"></div>
+          </div>
+        <div>
+        인증번호입력: <input id="receive_validate" type="text" disabled>
+        <input class="btn" id="checkPhone_btn" type="button" value="인증번호확인" disabled/>
+        <div id="validate_result"></div>
+        </div>
+      </div>
+      
       <div id="loginFormEmail">
         이메일:
         <input
@@ -49,7 +79,7 @@
         />
         <span>@</span>
         <input type="text" id="email-domain" name="email-domain" />
-        <select name="" id="email-domain-select" onchange="domain_select()">
+        <select name="" id="email-domain-select" onchange="domain_select()" class="selection">
           <option value="">직접입력</option>
           <option value="naver.com">naver.com</option>
           <option value="github.com">github.com</option>
@@ -60,8 +90,6 @@
         <div class="loginFormEmailInput_input"></div>
       </div>
 
-      
-      
       <div>
       <input type="text" id="sample6_postcode" placeholder="우편번호" />
       <input
@@ -75,15 +103,37 @@
       <input type="text" id="sample6_extraAddress" placeholder="참고항목" />
       <br />
       </div>
-      <input class="btn" type="submit" value="가입하기" />
+      <input id="submit_btn" class="btn" type="submit" value="가입하기" disabled/>
     </form>
-  </div>
-  <div class="img">
-    <div>나님등장</div>
-    <img src="../images/4.png" alt="">
   </div>
     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
     <script></script>
     <script src="loginForm.js"></script>
   </body>
 </html>
+
+<!-- 1. 회원가입 페이지 만들기 
+    1. 회원가입 항목
+        1. 회원계정(memberUserName)
+            1. 필수입력
+            2. 5~10글자, 영문소문자 필수, 숫자 필수, 특수문자는 -_ 만 가능(특수문자는 필수아님)
+                1. 조건을 만족하지 않으면 경고문구를 입력칸 아래에 빨간색으로 출력 
+        2. 비밀번호(memberPassword)
+            1. 필수입력
+            2. 6~18글자, 영문대/소문자 필수, 숫자 필수, 특수문자 필수(!#$-_)
+                1. 조건을 만족하지 않으면 경고문구를 입력칸 아래에 빨간색으로 출력 
+        3. 비밀번호확인(passwordConfirm)
+            1. 비밀번호 항목에서 입력한 값과 일치하면 일치, 일치하지 않으면 일치하지 않는다 라는 메시지를 입력칸 아래에 빨간색으로 출력
+        4. 이름(memberName)
+            1. 필수입력
+        5. 전화번호(memberMobile)
+            1. 통신사를 선택하는 select 있음. 
+                1. SKT, KT, LG, MVNO 선택할 수 있음. 
+            2. 전화번호는 010-0000-0000으로 입력하도록 함. 만족하지 않으면 빨간색으로 형식에 맞지 않는다고 출력 
+        6. 이메일(memberEmail)
+            1. 계정을 쓰고 도메인은 select로 선택 
+            2. select 항목은 직접입력, 네이버, 다음, 지메일 
+        7. 성별(memberGender)
+            1. radio를 이용하여 남, 녀 선택
+        8. 주소(memberAddress)
+            1. 다음 우편번호 api 적용 -->

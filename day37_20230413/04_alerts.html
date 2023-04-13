@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        height: 3000px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="fun1()">alert</button>
+    <button onclick="fun2()">confirm</button>
+    <button onclick="fun3()">prompt</button>
+    <button onclick="fun4()">뒤로</button>
+    <button onclick="fun5()">현재페이지 높이 확인</button>
+  </body>
+  <script>
+    const fun1 = () => {
+      alert("alert 입니다.");
+    };
+    const fun2 = () => {
+      const result = confirm("선택해주세요"); // bolean
+      console.log(result);
+      if (result) {
+        alert("확인을 클릭");
+      } else {
+        alert("취소를클릭");
+      }
+    };
+
+    const fun3 = () => {
+      const name = prompt("이름을 입력해주세요.");
+      alert(`${name}님 환영합니다`);
+    };
+
+    const fun4 = () => {
+      history.back();
+    };
+
+    const fun5 = () => {
+      const height = document.documentElement.scrollHeight;
+      console.log(height);
+      // BOM(Browser Obhect Model)
+      window.scrollTo(0, 2000);
+    };
+  </script>
+</html>

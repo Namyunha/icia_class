@@ -1,6 +1,5 @@
 const loginForm = document.getElementById("loginForm");
 const loginFormId = document.getElementById("loginFormId");
-const loginFormIdInput = document.getElementById("loginFormIdInput");
 
 const loginFormIdInput_input = document.querySelector(
   ".loginFormIdInput_input"
@@ -15,6 +14,7 @@ const idResult = document.querySelector(".loginFormIdInput_input");
 const loginFormEmailInputBtn = document.querySelector(
   "#loginFormEmailInput_btn"
 );
+
 const loginFormEmailInputInput = document.querySelector(
   ".loginFormEmailInput_input"
 );
@@ -27,24 +27,38 @@ const loginFormPwInputText = document.querySelector(".loginFormPwInput_input");
 const emailDomainSelect = document.querySelector("#email-domain-select");
 const checkFormPwInputBtn = document.querySelector("#checkFormPwInput_btn");
 
+// phone
+let receiveValidate = document.querySelector("#receive_validate");
+const loginFormPhoneInputBtn = document.querySelector(
+  "#loginFormPhoneInput_btn"
+);
+let checkPhoneInput = document.querySelector("#checkPhoneInput");
+
+const checkPhoneBtn = document.querySelector("#checkPhone_btn");
+
+let carrier = document.querySelector("#carrier");
+
+// 성별div
+const Gender = document.querySelector("#Gender");
+
 const domain_select = () => {
   console.dir(emailDomainSelect.value);
   emailDomain.value = emailDomainSelect.value;
 };
 
 function handleForm() {
-  if (loginFormIdInput.value.length == 0) {
-    idResult.innerText = "8~20자로 입력해주세요";
-  } else if (
-    loginFormIdInput.value.length >= 8 &&
-    loginFormIdInput.value.length <= 20
-  ) {
-    idResult.innerText = "사용 가능한 아이디입니다.";
-  } else if (loginFormIdInput.value.length > 20) {
-    idResult.innerText = "8~20자로 입력해주세요";
+  const loginFormIdInput = document.getElementById("loginFormIdInput").value;
+  console.log(loginFormIdInput);
+  const exp = /^[a-z\d]{8,20}$/;
+  // 정규식 만족여부 체크
+  if (loginFormIdInput.match(exp)) {
+    idResult.innerText = "사용가능한 이메일입니다.";
+    idResult.style.color = "green";
+  } else {
+    idResult.innerText = "영소문자,숫자 포함 8 ~ 20자리";
+    idResult.style.color = "red";
   }
 }
-
 function handleEmailClick() {
   const loginFormEmailInput = document.querySelector(
     "#loginFormEmailInput"
@@ -54,11 +68,12 @@ function handleEmailClick() {
   // 정규식 만족여부 체크
   if (loginFormEmailInput.match(exp)) {
     loginFormEmailInputInput.innerText = "사용가능한 이메일입니다.";
+    loginFormEmailInputInput.style.color = "green";
   } else {
     loginFormEmailInputInput.innerText = "영소문자,숫자 포함 8 ~ 20자리";
+    loginFormEmailInputInput.style.color = "red";
   }
 }
-
 function handlePwClick() {
   const loginFormPwInputInput =
     document.querySelector("#loginFormPwInput").value;
@@ -67,11 +82,12 @@ function handlePwClick() {
   // 정규식 만족여부 체크
   if (loginFormPwInputInput.match(exp)) {
     loginFormPwInputText.innerText = "사용가능한 비밀번호입니다.";
+    loginFormPwInputText.style.color = "green";
   } else {
     loginFormPwInputText.innerText = "영소문자,숫자 포함 8 ~ 16자리";
+    loginFormPwInputText.style.color = "red";
   }
 }
-
 function reCheck() {
   const loginFormPwInputInput =
     document.querySelector("#loginFormPwInput").value;
@@ -79,16 +95,16 @@ function reCheck() {
   const checkFormPwInput = document.querySelector(".checkFormPwInput");
   if (loginFormPwInputInput == checkPwInput) {
     checkFormPwInput.innerText = "비밀번호가 일치합니다.";
+    checkFormPwInput.style.color = "green";
   } else {
     checkFormPwInput.innerText = "비밀번호가 일치하지않습니다.";
+    checkFormPwInput.style.color = "red";
   }
 }
-
 function sample6_execDaumPostcode() {
   new daum.Postcode({
     oncomplete: function (data) {
       // 팝업에서 검색결과 항목을 클릭했을때 실행할 코드를 작성하는 부분.
-
       // 각 주소의 노출 규칙에 따라 주소를 조합한다.
       // 내려오는 변수가 값이 없는 경우엔 공백('')값을 가지므로, 이를 참고하여 분기 한다.
       var addr = ""; // 주소 변수
@@ -133,9 +149,65 @@ function sample6_execDaumPostcode() {
     },
   }).open();
 }
+let number;
+
+// function phoneBtnClick() {
+//   const checkPhoneInput = document.querySelector("#checkPhoneInput").value;
+//   number = Math.floor(1111111 * Math.random());
+//   const phoneResult = document.querySelector("#phone_result");
+//   const exp = /^\d{3}-\d{4}-\d{4}$/;
+//   // 정규식 만족여부 체크
+//   if (checkPhoneInput.match(exp)) {
+//     phoneResult.innerText = "인증번호발송";
+//     phoneResult.style.color = "green";
+//     phoneResult.style.margin = "10px";
+//     receiveValidate.disabled = false;
+//     checkPhoneBtn.disabled = false;
+//     checkPhoneBtn.addEventListener("click", validateCheck);
+//     alert(number);
+//   } else {
+//     phoneResult.innerText = "올바른 연락처를 입력해주세요";
+//     phoneResult.style.color = "red";
+//     phoneResult.style.margin = "10px";
+//   }
+// }
+
+function phoneBtnClick() {
+  const checkPhoneInput = document.querySelector("#checkPhoneInput").value;
+  number = Math.floor(1111111 * Math.random());
+  const phoneResult = document.querySelector("#phone_result");
+  const exp = /^\d{3}-\d{4}-\d{4}$/;
+  // 정규식 만족여부 체크
+  if (checkPhoneInput.match(exp)) {
+    phoneResult.innerText = "인증번호를 입력해주세요";
+    phoneResult.style.color = "green";
+    phoneResult.style.margin = "10px";
+    receiveValidate.disabled = false;
+    checkPhoneBtn.disabled = false;
+    checkPhoneBtn.addEventListener("click", validateCheck);
+    alert(number);
+  } else {
+    phoneResult.innerText = "올바른 연락처를 입력해주세요";
+    phoneResult.style.color = "red";
+    phoneResult.style.margin = "10px";
+  }
+}
+
+function validateCheck() {
+  const validateResult = document.querySelector("#validate_result");
+  if (number == Number(receiveValidate.value)) {
+    validateResult.innerHTML = "인증에 성공하셨습니다.";
+    validateResult.style.color = "green";
+  } else {
+    validateResult.innerHTML = "인증에 실패하셨습니다.";
+    validateResult.style.color = "red";
+  }
+  console.log(typeof number);
+  console.log(typeof Number(receiveValidate.value));
+}
 
 loginFormPwInputBtn.addEventListener("click", handlePwClick);
-
 loginFormEmailInputBtn.addEventListener("click", handleEmailClick);
 loginFormIdInputBtn.addEventListener("click", handleForm);
 checkFormPwInputBtn.addEventListener("click", reCheck);
+loginFormPhoneInputBtn.addEventListener("click", phoneBtnClick);

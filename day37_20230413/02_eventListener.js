@@ -10,7 +10,10 @@ const email_check = (event) => {
   const emailInput = document.getElementById("emailInput").value;
   const exp = /^[a-z\d]{8,16}$/;
   // 정규식 만족여부 체크
-  if (emailInput.match(exp)) {
+  if (emailInput.length == 0) {
+    result.innerHTML = "필수정보입니다";
+    result.style.color = "red";
+  } else if (emailInput.match(exp)) {
     result.innerHTML = "사용가능한 이메일입니다.";
     result.style.color = "green";
   } else {
