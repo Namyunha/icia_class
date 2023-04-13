@@ -25,6 +25,7 @@ const emailDomain = document.querySelector("#email-domain");
 const loginFormPwInputBtn = document.querySelector("#loginFormPwInput_btn");
 const loginFormPwInputText = document.querySelector(".loginFormPwInput_input");
 const emailDomainSelect = document.querySelector("#email-domain-select");
+const checkFormPwInputBtn = document.querySelector("#checkFormPwInput_btn");
 
 const domain_select = () => {
   console.dir(emailDomainSelect.value);
@@ -38,7 +39,7 @@ function handleForm() {
     loginFormIdInput.value.length >= 8 &&
     loginFormIdInput.value.length <= 20
   ) {
-    idResult.innerText = "좋습니다";
+    idResult.innerText = "사용 가능한 아이디입니다.";
   } else if (loginFormIdInput.value.length > 20) {
     idResult.innerText = "8~20자로 입력해주세요";
   }
@@ -52,11 +53,9 @@ function handleEmailClick() {
   const exp = /^[a-z\d]{8,20}$/;
   // 정규식 만족여부 체크
   if (loginFormEmailInput.match(exp)) {
-    console.log("정규식 만족");
-    loginFormEmailInputInput.innerText = "좋아요";
+    loginFormEmailInputInput.innerText = "사용가능한 이메일입니다.";
   } else {
-    console.log("정규식 만족하지 않음");
-    loginFormEmailInputInput.innerText = "싫어요";
+    loginFormEmailInputInput.innerText = "영소문자,숫자 포함 8 ~ 20자리";
   }
 }
 
@@ -67,11 +66,21 @@ function handlePwClick() {
   const exp = /^[a-z\d]{8,16}$/;
   // 정규식 만족여부 체크
   if (loginFormPwInputInput.match(exp)) {
-    console.log("정규식 만족");
-    loginFormPwInputText.innerText = "좋아요";
+    loginFormPwInputText.innerText = "사용가능한 비밀번호입니다.";
   } else {
-    console.log("정규식 만족하지 않음");
-    loginFormPwInputText.innerText = "싫어요";
+    loginFormPwInputText.innerText = "영소문자,숫자 포함 8 ~ 16자리";
+  }
+}
+
+function reCheck() {
+  const loginFormPwInputInput =
+    document.querySelector("#loginFormPwInput").value;
+  const checkPwInput = document.querySelector("#checkPwInput").value;
+  const checkFormPwInput = document.querySelector(".checkFormPwInput");
+  if (loginFormPwInputInput == checkPwInput) {
+    checkFormPwInput.innerText = "비밀번호가 일치합니다.";
+  } else {
+    checkFormPwInput.innerText = "비밀번호가 일치하지않습니다.";
   }
 }
 
@@ -129,3 +138,4 @@ loginFormPwInputBtn.addEventListener("click", handlePwClick);
 
 loginFormEmailInputBtn.addEventListener("click", handleEmailClick);
 loginFormIdInputBtn.addEventListener("click", handleForm);
+checkFormPwInputBtn.addEventListener("click", reCheck);
